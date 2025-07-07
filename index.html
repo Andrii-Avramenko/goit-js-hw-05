@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дз 16 Авраменко Андрій</title>
+    <style>
+      button {
+        background-color: rgb(138, 43, 226);
+        color: #fff;
+        padding: 15px;
+        border: 0;
+        border-radius: 20px;
+      }
+      #code-part {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Code Preview</h1>
+    <button type="button" data-url="./js/task-1.js">Файл з завданням 1</button>
+    <button type="button" data-url="./js/task-2.js">Файл з завданням 2</button>
+    <button type="button" data-url="./js/task-3.js">Файл з завданням 3</button>
+    <button type="button" data-url="./js/task-4.js">Файл з завданням 4</button>
+    <button type="button" data-url="./js/task-5.js">Файл з завданням 5</button>
+
+    <iframe
+      src="./js/task-1.js"
+      id="code-part"
+      width="900"
+      height="500"
+      frameborder="0"
+    ></iframe>
+
+    <script type="module" src="./js/task-1.js"></script>
+    <script type="module" src="./js/task-2.js"></script>
+    <script type="module" src="./js/task-3.js"></script>
+    <script type="module" src="./js/task-4.js"></script>
+    <script type="module" src="./js/task-5.js"></script>
+    
+    <script>
+      const buttons = document.querySelectorAll("button");
+      const iframe = document.getElementById("code-part");
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const url = btn.dataset.url;
+          iframe.src = url;
+        });
+      });
+    </script>
+  </body>
 </html>
